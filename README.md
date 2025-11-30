@@ -1,4 +1,4 @@
-# Predicting the Severity of Major Power Outages in the U.S.
+## Predicting the Severity of Major Power Outages in the U.S.
 
 ## Assessment of Missingness
 Based on the dataset the column which is most likely to be **NMAR** (Not Missing at Random) is
