@@ -38,7 +38,7 @@ To frame it as **MAR** (Missing at Random) further information on why the values
 
 ## Hypothesis Testing
 <iframe
-  src="kde_is_normal_climate_True_False_dur_hours.html"
+  src="assets/kde_is_normal_climate_True_False_dur_hours.html"
   width="800"
   height="600"
   frameborder="0"
