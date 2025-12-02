@@ -3,6 +3,19 @@
 ## Introduction
 
 ## Data Cleaning and Exploratory Data Analysis
+<iframe
+  src="assets/univariate_analysis_cause.category.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/univariate_analysis_cause.region.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Assessment of Missingness
 Based on the dataset the column which is most likely to be **NMAR** (Not Missing at Random) is
