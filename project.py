@@ -74,7 +74,12 @@ def plot_single_bar(df,col,color = None):
     fig = make_subplots(rows = 1, cols = 1, subplot_titles = [col])
     fig.add_trace(go.Bar(x=vc[col], y=vc['proportion'], marker_color = color), row=1, col=1)
     
-    fig.update_layout(height=500, width=500)
+    fig.update_layout(
+        height=500, 
+        width=500,
+        paper_bgcolor='rgb(243, 243, 243)',
+        plot_bgcolor='rgb(243, 243, 243)'
+    )
     fig.write_html(f'assets/univariate_analysis_{col}.html')
     return fig
     #plotly subplots reference: https://plotly.com/python/subplots
@@ -96,7 +101,13 @@ def plot_multiple_bars(df, columns ,title = 'Distributions'):
             col = 1
             row += 1
             
-    fig.update_layout(height=500 * rows, width=1200, title=title)
+    fig.update_layout(
+        height=500 * rows, 
+        width=1200, 
+        title=title,
+        paper_bgcolor='rgb(243, 243, 243)',
+        plot_bgcolor='rgb(243, 243, 243)'
+    )
     return fig
     
 def plot_state_choropleth(df, value_col, aggfunc = 'mean'):
