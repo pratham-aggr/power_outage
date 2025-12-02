@@ -17,6 +17,20 @@
   frameborder="0"
 ></iframe>
 
+<iframe
+  src="bivariate_analysis_cause.category_vs_dur_hours_box_plot.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="map.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 ## Assessment of Missingness
 Based on the dataset the column which is most likely to be **NMAR** (Not Missing at Random) is
 `demand.loss (megawatt)` During large severe outages, reporting systems are often deprioritized which increases the likelihood that the larger (unobserved) values of outages are missing. This further means that missing may be directly related to the variable itself (the definition of NMAR).

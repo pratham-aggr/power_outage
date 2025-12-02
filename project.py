@@ -115,6 +115,7 @@ def plot_state_choropleth(df, value_col, aggfunc = 'mean'):
         line_opacity = 0.9,
         fill_color="YlGn"
     ).add_to(m)
+    m.save('assets/map.html')
     return m
     #folium choropleth reference: https://python-visualization.github.io/folium/latest/user_guide/geojson/choropleth.html
 
