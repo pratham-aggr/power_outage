@@ -18,7 +18,7 @@
 ></iframe>
 
 <iframe
-  src="bivariate_analysis_cause.category_vs_dur_hours_box_plot.html"
+  src="assets/bivariate_analysis_cause.category_vs_dur_hours_box_plot.html"
   width="800"
   height="600"
   frameborder="0"
