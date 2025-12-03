@@ -68,7 +68,7 @@ def get_variable_lists():
 
     return categorical_vars, numeric_vars, datetime_vars
 
-def plot_single_bar(df,col,color = None):
+def plot_single_bar(df,col,color = 'blue'):
     vc = df[col].value_counts(normalize=True).reset_index()
     vc.columns = [col, 'proportion']
     fig = make_subplots(rows = 1, cols = 1, subplot_titles = [col])

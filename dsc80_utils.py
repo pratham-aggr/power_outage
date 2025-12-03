@@ -83,12 +83,15 @@ def create_kde_plotly(df, group_col, group1, group2, vals_col, title=''):
         group_labels=[group1, group2],
         show_rug=False, show_hist=False
     )
-    fig.write_html(f'assets/kde_{group_col}_{group1}_{group2}_{vals_col}.html')
-    return fig.update_layout(
+    fig.update_layout(
         title=title,
         paper_bgcolor='rgb(243, 243, 243)',
-        plot_bgcolor='rgb(243, 243, 243)'
+        plot_bgcolor='rgb(243, 243, 243)',
+        width=600,
+        height=500
     )
+    fig.write_html(f'assets/kde_{group_col}_{group1}_{group2}_{vals_col}.html')
+    return fig
 
 def multiple_hists(df_map, histnorm="probability", title=""):
     values = [df_map[df_name]["child"].dropna() for df_name in df_map]
