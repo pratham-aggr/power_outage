@@ -33,6 +33,7 @@ Summary statistics of some variables that intuitively contribute most to the pow
 | 75%   | 48         | 150000             | 400                        | 1.94029e+07 | 89.81            | 13.85                  | 53622                   |
 | max   | 1811.88    | 3.24144e+06        | 41788                      | 3.92965e+07 | 100              | 34.58                  | 168377                  |
 </div>
+
 To better understand these events, this project uses the [Major Power Outage Events](https://www.sciencedirect.com/science/article/pii/S2352340918307182) dataset, which records **1,535** power outages in the United States. Each outage has around **57** columns of information. This wide range of information motivates the central question of this project:  
 **What factors influence how long a major power outage lasts, and can we predict outage duration using the available data?**
 
@@ -41,31 +42,30 @@ Understanding and predicting outage duration can help policymakers and the gener
 ## Data Cleaning and Exploratory Data Analysis
 
 ### Univariate Analysis 
-<iframe
+<!-- <iframe
   src="assets/univariate_analysis_cause.category.html"
   width="800"
   height="600"
   frameborder="0"
+></iframe> -->
+<iframe
+  src="assets/map.html"
+  width="800"
+  height="600"
+  frameborder="0"
 ></iframe>
-
 The above choropleth map shows the average duration of power outages in hours by U.S states. Darker regions indicate longer periods of power outage while lighter ones indicate on regions which recover power quicker than darker ones. The map shows diverse avergae otage durations across US states. The states in Northeast and Midwest tend to have higher and persistent power outages whereas Southern and Western states on average show shorter power outage durations. This observation is driven by various factors like climate exposure, infrastructure of the states, population density and other confounding variables not found in the dataset. 
 
-<iframe
+### Bivariate Analysis 
+<!-- <iframe
   src="assets/univariate_analysis_climate.region.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
-
+ -->
 <iframe
   src="assets/bivariate_analysis_cause.category_vs_dur_hours_box_plot.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
-
-<iframe
-  src="assets/map.html"
   width="800"
   height="600"
   frameborder="0"
