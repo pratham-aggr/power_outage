@@ -5,7 +5,6 @@
 Power outages disrupt millions of lives, which raises pressing issues like public safety and emergency response to economic stability. A power outage may seem like a simple inconvenience—like losing the chance to finish a show on Netflix—but its real impact goes far beyond that. In severe situations, a power outage can disable critical medical equipment, shut down heating or cooling during extreme weather, interrupt communication systems used by first responders, halt transportation services, and cause widespread economic losses for businesses and communities.
 
 Some of the major columns for the data and their descriptions are shown below. For descriptions of all other columns, please visit [here](https://www.sciencedirect.com/science/article/pii/S2352340918307182).
-<div style="overflow-x: auto;">
 
 | Column                                  | Description |
 |-----------------------------------------|-------------|
@@ -16,12 +15,10 @@ Some of the major columns for the data and their descriptions are shown below. F
 | **poppct_urban (%)**                    | Percent of the state population living in urban areas. |
 | **res.price (cents/kWh)**               | Residential electricity price in cents per kilowatt-hour. |
 | **pc.realgsp.state (usd)**              | Per-capita real gross state product (an economic indicator) in US dollars. |
-</div>
 
 Summary statistics of some variables that intuitively contribute most to the power outage are shown below.  
 **Note:** `dur_hours` is calculated by taking the difference between `outage_restore` and `outage_start`.
-<div style="overflow-x: auto;">
-    
+
 |       | dur_hours | customers.affected | demand.loss.mw (megawatt) | population | poppct_urban (%) | res.price (cents/kWh) | pc.realgsp.state (usd) |
 |-------|-----------:|-------------------:|---------------------------:|------------:|------------------:|------------------------:|-------------------------:|
 | count | 1476       | 1056               | 804                        | 1476        | 1476             | 1464                   | 1476                    |
@@ -32,7 +29,6 @@ Summary statistics of some variables that intuitively contribute most to the pow
 | 50%   | 11.6833    | 71661.5            | 175.5                      | 8.82341e+06 | 84.05            | 11.5                   | 48323                   |
 | 75%   | 48         | 150000             | 400                        | 1.94029e+07 | 89.81            | 13.85                  | 53622                   |
 | max   | 1811.88    | 3.24144e+06        | 41788                      | 3.92965e+07 | 100              | 34.58                  | 168377                  |
-</div>
 
 To better understand these events, this project uses the [Major Power Outage Events](https://www.sciencedirect.com/science/article/pii/S2352340918307182) dataset, which records **1,535** power outages in the United States. Each outage has around **57** columns of information. This wide range of information motivates the central question of this project:  
 **What factors influence how long a major power outage lasts, and can we predict outage duration using the available data?**
