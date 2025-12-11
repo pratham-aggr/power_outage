@@ -6,8 +6,6 @@ Power outages disrupt millions of lives, which raises pressing issues like publi
 
 Some of the major columns for the data and their descriptions are shown below. For descriptions of all other columns, please visit [here](https://www.sciencedirect.com/science/article/pii/S2352340918307182).
 
-<center>
-
 | Column                                  | Description |
 |-----------------------------------------|-------------|
 | **dur_hours**                           | Duration of the power outage in hours (calculated from outage start and restoration times). |
@@ -18,12 +16,8 @@ Some of the major columns for the data and their descriptions are shown below. F
 | **res.price (cents/kWh)**               | Residential electricity price in cents per kilowatt-hour. |
 | **pc.realgsp.state (usd)**              | Per-capita real gross state product (an economic indicator) in US dollars. |
 
-</center>
-
 Summary statistics of some variables that intuitively contribute most to the power outage are shown below.  
 **Note:** `dur_hours` is calculated by taking the difference between `outage_restore` and `outage_start`.
-
-<center>
 
 |       | dur_hours | customers.affected | demand.loss.mw (megawatt) | population | poppct_urban (%) | res.price (cents/kWh) | pc.realgsp.state (usd) |
 |-------|-----------:|-------------------:|---------------------------:|------------:|------------------:|------------------------:|-------------------------:|
@@ -36,14 +30,14 @@ Summary statistics of some variables that intuitively contribute most to the pow
 | 75%   | 48         | 150000             | 400                        | 1.94029e+07 | 89.81            | 13.85                  | 53622                   |
 | max   | 1811.88    | 3.24144e+06        | 41788                      | 3.92965e+07 | 100              | 34.58                  | 168377                  |
 
-</center>
-
 To better understand these events, this project uses the [Major Power Outage Events](https://www.sciencedirect.com/science/article/pii/S2352340918307182) dataset, which records **1,535** power outages in the United States. Each outage has around **57** columns of information. This wide range of information motivates the central question of this project:  
 **What factors influence how long a major power outage lasts, and can we predict outage duration using the available data?**
 
 Understanding and predicting outage duration can help policymakers and the general public prepare for emergency needs, allocate resources effectively, and plan according to outage severity.
 
 ## Data Cleaning and Exploratory Data Analysis
+
+### Univariate Analysis 
 <iframe
   src="assets/univariate_analysis_cause.category.html"
   width="800"
