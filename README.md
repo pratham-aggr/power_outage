@@ -58,8 +58,6 @@ Missing values in the dataset were imputated using the preprocessing pipeline sh
 The below choropleth map shows the average duration of power outages in hours by U.S states. Darker regions indicate longer periods of power outage while lighter ones indicate on regions which recover power quicker than darker ones. The map shows diverse avergae otage durations across US states. The states in Northeast and Midwest tend to have higher and persistent power outages whereas Southern and Western states on average show shorter power outage durations. This observation is driven by various factors like climate exposure, infrastructure of the states, population density and other confounding variables not found in the dataset. 
 <iframe
   src="assets/map.html"
-  width="600"
-  height="400"
   frameborder="0"
 ></iframe>
 
