@@ -20,7 +20,7 @@ Summary statistics of some variables that intuitively contribute most to the pow
 **Note:** `dur_hours` is calculated by taking the difference between `outage_restore` and `outage_start`.
 
 |       | dur_hours | customers.affected | demand.loss.mw (megawatt) | population | poppct_urban (%) | res.price (cents/kWh) | pc.realgsp.state (usd) |
-|-------|-----------:|-------------------:|---------------------------:|------------:|------------------:|------------------------:|-------------------------:|
+|-------|-----------|-------------------|---------------------------|------------|------------------|------------------------|-------------------------|
 | count | 1476       | 1056               | 804                        | 1476        | 1476             | 1464                   | 1476                    |
 | mean  | 43.7546    | 144117             | 543.399                    | 1.31474e+07 | 80.9457          | 11.971                 | 49387.5                 |
 | std   | 99.0654    | 288110             | 2226.49                    | 1.14772e+07 | 11.8922          | 3.09008                | 11828                   |
@@ -36,6 +36,10 @@ To better understand these events, this project uses the [Major Power Outage Eve
 Understanding and predicting outage duration can help policymakers and the general public prepare for emergency needs, allocate resources effectively, and plan according to outage severity.
 
 ## Data Cleaning and Exploratory Data Analysis
+To prepare the data for analysis several cleaning steps were taken to clean and standardize the data. First goal was to convert units properly, fix columns names, handel how date and time are stored and remove redundant information in the dataset. Since data was in `.xlxs` format it was converted to `.csv` using google sheets. Then we created a deep copy of the data to preserve the orginal raw information. First five rows were deleted because they contained some metadata, which was disrupting tabular data expectations for our analysis. Since units are crucial to this analysis, we drop the unit column and merge it with the header following the format: `<col_name> (<unit>)` (provided the units exist for the columns). To keep our analysis handy we divided the variables into three major categories: categorical, numeric and datetime variables. All numeric variable were converted to float to avoid typecasting issues during model preperation. Moreover datetime variables like month, year, time were conveted to pandas datetime format using `pd.to_datetime()`. Therefore all datetime variables were merged into two unique columns called `outage_start` and `outage_restore`.Target variable (`dur_hours`) was prepared by taking the difference between `outage_restore` and `outage_start`.
+
+`hurricane.names` is not useful information for our analysis hence we drop that columns. Since other columns like `cause.category` and `cause.category.detail` tell us why outage happened, dropping `hurricane.names` won't affect our model performance. `obs` was just an index columns hence we dropped it as well. `variable (units)` was dropped since we merged this information with columns headers. `postal.codes` was just US state names written in abbreviation, so we drop it.  
+
 
 ### Univariate Analysis 
 <!-- <iframe
@@ -78,6 +82,7 @@ The boxplot below is comparion of average durations
 | High      | 315   | 51.39 | 12.00  |
 | Very High | 270   | 33.36 | 5.74   |
 
+The aggregation tables paints a good picture of how outage severity varies across different levels of urbanizaton, which reveals some important patterns. States with lower urabanization experience longer periods of power outage. This supports our general understanding, since less urabanized places have inadequate infrastructure and limited urgency of restoration. On the contrary urabanized places, though have frequent outages, however they restore back quicker than lower urabanized places. This gives us a solid context on how urbanization influences power outage durations. 
 
 ## Assessment of Missingness
 Based on the dataset the column which is most likely to be **NMAR** (Not Missing at Random) is
