@@ -71,7 +71,7 @@ The below choropleth map shows the average duration of power outages in hours by
   frameborder="0"
 ></iframe>
  -->
-The boxplot below is comparion of average durations
+The boxplot below compares outage duration across different cause.categories, which explains us about how severity of power outage when depending on severity of the cause. Severe weather and fuel supply emergencies tend to produce longest an most variable outages, having many outliers. In contrast the intentional attacks and islanding generally shows lower outage duration. This analysis shows that cause of an outage plays an important role in determining how long the outage would last, hence making it an important feature to include. 
 <iframe
   src="assets/bivariate_analysis_cause.category_vs_dur_hours_box_plot.html"
   width="800"
