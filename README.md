@@ -1,7 +1,7 @@
 ## Predicting the Severity of Major Power Outages in the U.S.
 
 ## Introduction
-
+Power Outages dirupt freely flowing routine life, it could be as minute 
 ## Data Cleaning and Exploratory Data Analysis
 <iframe
   src="assets/univariate_analysis_cause.category.html"
