@@ -1,6 +1,7 @@
 ## Predicting the Severity of Major Power Outages in the U.S.
+**Analysis by Pratham Aggarwal**
 
-# Introduction
+## Introduction
 Power outages disrupt millions of lives, which raises pressing issues like public safety and emergency response to economic stability. A power outage may seem like a simple inconvenience—like losing the chance to finish a show on Netflix—but its real impact goes far beyond that. In severe situations, a power outage can disable critical medical equipment, shut down heating or cooling during extreme weather, interrupt communication systems used by first responders, halt transportation services, and cause widespread economic losses for businesses and communities.
 
 Some of the major columns for the data and their descriptions are shown below. For descriptions of all other columns, please visit [here](https://www.sciencedirect.com/science/article/pii/S2352340918307182).
@@ -42,7 +43,7 @@ To better understand these events, this project uses the [Major Power Outage Eve
 
 Understanding and predicting outage duration can help policymakers and the general public prepare for emergency needs, allocate resources effectively, and plan according to outage severity.
 
-# Data Cleaning and Exploratory Data Analysis
+## Data Cleaning and Exploratory Data Analysis
 <iframe
   src="assets/univariate_analysis_cause.category.html"
   width="800"
@@ -71,12 +72,12 @@ Understanding and predicting outage duration can help policymakers and the gener
   frameborder="0"
 ></iframe>
 
-# Assessment of Missingness
+## Assessment of Missingness
 Based on the dataset the column which is most likely to be **NMAR** (Not Missing at Random) is
 `demand.loss (megawatt)` During large severe outages, reporting systems are often deprioritized which increases the likelihood that the larger (unobserved) values of outages are missing. This further means that missing may be directly related to the variable itself (the definition of NMAR).
 To frame it as **MAR** (Missing at Random) further information on why the values are missing would be needed. This additional information could be wind speed, precipitation, some disaster report or reporting system failure is needed. If these factors can convey some correlation with the missingness in demand.loss (megawatt) then MAR can be justified. 
 
-# Hypothesis Testing
+## Hypothesis Testing
 <iframe
   src="assets/kde_is_normal_climate_True_False_dur_hours.html"
   width="800"
@@ -84,10 +85,10 @@ To frame it as **MAR** (Missing at Random) further information on why the values
   frameborder="0"
 ></iframe>
 
-# Framing a Prediction Problem
+## Framing a Prediction Problem
 
-# Baseline Model
+## Baseline Model
 
-# Final Model
+## Final Model
 
-# Fairness Analysis
+## Fairness Analysis
