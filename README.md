@@ -48,13 +48,13 @@ Understanding and predicting outage duration can help policymakers and the gener
   height="600"
   frameborder="0"
 ></iframe> -->
+The below choropleth map shows the average duration of power outages in hours by U.S states. Darker regions indicate longer periods of power outage while lighter ones indicate on regions which recover power quicker than darker ones. The map shows diverse avergae otage durations across US states. The states in Northeast and Midwest tend to have higher and persistent power outages whereas Southern and Western states on average show shorter power outage durations. This observation is driven by various factors like climate exposure, infrastructure of the states, population density and other confounding variables not found in the dataset. 
 <iframe
   src="assets/map.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
-The above choropleth map shows the average duration of power outages in hours by U.S states. Darker regions indicate longer periods of power outage while lighter ones indicate on regions which recover power quicker than darker ones. The map shows diverse avergae otage durations across US states. The states in Northeast and Midwest tend to have higher and persistent power outages whereas Southern and Western states on average show shorter power outage durations. This observation is driven by various factors like climate exposure, infrastructure of the states, population density and other confounding variables not found in the dataset. 
 
 ### Bivariate Analysis 
 <!-- <iframe
@@ -64,12 +64,24 @@ The above choropleth map shows the average duration of power outages in hours by
   frameborder="0"
 ></iframe>
  -->
+The boxplot below is comparion of average durations
 <iframe
   src="assets/bivariate_analysis_cause.category_vs_dur_hours_box_plot.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+### Interesting Aggregates
+
+| urban_bin | count | mean  | median |
+|-----------|-------|-------|--------|
+| Very Low  | 296   | 41.36 | 9.43   |
+| Low       | 319   | 59.55 | 35.00  |
+| Medium    | 276   | 29.53 | 6.32   |
+| High      | 315   | 51.39 | 12.00  |
+| Very High | 270   | 33.36 | 5.74   |
+
 
 ## Assessment of Missingness
 Based on the dataset the column which is most likely to be **NMAR** (Not Missing at Random) is
