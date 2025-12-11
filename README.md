@@ -42,7 +42,7 @@ To prepare the data for analysis several cleaning steps were taken to clean and 
 <iframe
   src="assets/imputation.png"
   width="300"
-  height="400"
+  height="600"
   frameborder="0"
 ></iframe>
 Missing values in the dataset were imputated using the preprocessing pipeline shown above. Numerical features like (`anomaly.level (numeric)`,`demand.loss.mw (megawatt)`,`customers.affected`) were passed through `sklearn.SimpleImputer` that replaced `NaNs` with median for each columns. We particularly replaced with median, because while doing Exploratory Data Analysis majority columns showed skewed towards right behavior, therefore median imputation became a better choice than mean imputation as median are less sensitive to outliers than mean. Later, the numerical varaibles are passed through `StandardScaler`data into z-score. This is an important step as this will ensure that higher values of one feature would not dominate the ones with numerical lower value, ensuring a consistent analysis. Similarly categorical features were passed through `sklearn.SimpleImputer' that replaced `NaNs` with the most frequent category. Later OrdinalEncoding was performed on categorical variables, essentially converting these categories into numbers (Example: `['Low','Medium','High'] ->  [0,1,2]`. Note: Alternative imputation methods, including probabilistic and random sampling approaches, were explored. However, these techniques tended to inject noise and reduce predictive stability, so they were not used in the final preprocessing pipeline.
@@ -58,8 +58,8 @@ Missing values in the dataset were imputated using the preprocessing pipeline sh
 The below choropleth map shows the average duration of power outages in hours by U.S states. Darker regions indicate longer periods of power outage while lighter ones indicate on regions which recover power quicker than darker ones. The map shows diverse avergae otage durations across US states. The states in Northeast and Midwest tend to have higher and persistent power outages whereas Southern and Western states on average show shorter power outage durations. This observation is driven by various factors like climate exposure, infrastructure of the states, population density and other confounding variables not found in the dataset. 
 <iframe
   src="assets/map.html"
-  width="800"
-  height="600"
+  width="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
