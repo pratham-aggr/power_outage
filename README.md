@@ -166,14 +166,12 @@ We chose **RandomForestRegressor** for this problems, intital experiments showed
     src="assets/corr_before.html"
     width="1100"
     height="1100"
-    style="border:1px solid #ccc; border-radius:6px;"
   ></iframe>
 
   <iframe
     src="assets/corr_after.html"
     width="1100"
     height="1100"
-    style="border:1px solid #ccc; border-radius:6px;"
   ></iframe>
 
 </div>
