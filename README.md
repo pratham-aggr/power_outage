@@ -113,7 +113,7 @@ We test the following two hypothesis to for assessment of missingness in our dat
 Missingness appears to be random with respect to water percentage. Our general expectation says that it should be dependent on climate variable like anomally.level, but the analysis says the otherwise signaling a weaker effect of water percentage.
 
 <iframe
-  src="assets/hyp_pct_water_tot (%).html"
+  src="assets/hyp_pct_water_tot.html"
   width="800"
   height="600"
   frameborder="0"
