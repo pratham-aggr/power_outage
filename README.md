@@ -161,7 +161,23 @@ After running the preprocessing pipeline and training the model, we obtain an **
 ## Final Model
 We chose **RandomForestRegressor** for this problems, intital experiments showed that model overfitted heavily, producing low train error however maintaing high test error. To reduce overfitting we simplify our model by dropping high correltion features. We plot the correlational matrix before and after removing features having absolute correlation greater than 0.9. doing this we get the following correltional maps before and after results. 
 
-<div style="display:flex; gap:20px;"> <iframe src="assets/corr_before.html" ></iframe> <iframe src="assets/corr_after.html"></iframe> </div>
+<div style="display:flex; gap:20px; justify-content:center; align-items:center;">
+
+  <iframe
+    src="assets/corr_before.html"
+    width="500"
+    height="450"
+    style="border:1px solid #ccc; border-radius:6px;"
+  ></iframe>
+
+  <iframe
+    src="assets/corr_after.html"
+    width="500"
+    height="450"
+    style="border:1px solid #ccc; border-radius:6px;"
+  ></iframe>
+
+</div>
 
 Looking at the both the figures, we see that multicollinearity decreased after removal. Note: the dark digonal represents self-correlation (always 1) as expected.
 
@@ -187,7 +203,7 @@ The following features were removed due to excessive correlation or limited pred
 - `pct_land (%)`
 
 Now we proceed to tune model's hyperparameters using `GridSearchCv` with cross validation set size of 3 and the following parameter_grid
-`
+```python
 param_grid = {
     "model__n_estimators": [200, 400, 600],
     "model__max_depth": [20, 40, None],
@@ -195,10 +211,11 @@ param_grid = {
     "model__min_samples_leaf": [1, 2, 4],
     "model__max_features": ["sqrt", "log2", None]
 }
-`
+```
 
 Best parameters found through this approach were
-`
+```python
+
 Params = {
     'model__max_depth': 40, 
     'model__max_features': None, 
@@ -206,7 +223,8 @@ Params = {
     'model__min_samples_split': 2, 
     'model__n_estimators': 400
 }
-`
+```
+
 With resulting training error of **18.36** and test error of **37.79**. 
 
 ## Fairness Analysis
