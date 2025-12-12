@@ -163,13 +163,13 @@ We chose **RandomForestRegressor** for this problems, intital experiments showed
 <iframe
     src="assets/corr_before.html"
     width="800"
-    height="600"
+    height="800"
 ></iframe>
 
 <iframe
     src="assets/corr_after.html"
     width="800"
-    height="600"
+    height="800"
 ></iframe>
 
 
