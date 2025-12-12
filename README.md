@@ -56,6 +56,7 @@ first five rows of our cleaned dataset showing the important columns as follows:
 |  2 |  50         |                70000 |                         nan |  5.3109e+06  |              73.27 |                               10.87 |                    50447 |
 |  3 |  42.5       |                68200 |                         nan |  5.38044e+06 |              73.27 |                               11.79 |                    51598 |
 |  4 |  29         |               250000 |                         250 |  5.48959e+06 |              73.27 |                               13.07 |                    54431 |
+
 ### Univariate Analysis 
 <!-- <iframe
   src="assets/univariate_analysis_cause.category.html"
@@ -158,5 +159,54 @@ As in data cleaning section we reiterate the following, Numerical features like 
 After running the preprocessing pipeline and training the model, we obtain an **MAE of 37.5 on the training set** and **46.0 on the test set**. While these results are not ideal, the model still performs **better than a naïve mean baseline**, which produces **MAE = 47.5 (train)** and **MAE = 53.85 (test)**. Although the model improves upon the baseline, its overall performance remains weaker than desired. This suggests that additional feature engineering, hyperparameter tuning, or exploring alternative model architectures may be needed to achieve stronger predictive accuracy.
 
 ## Final Model
+We chose **RandomForestRegressor** for this problems, intital experiments showed that model overfitted heavily, producing low train error however maintaing high test error. To reduce overfitting we simplify our model by dropping high correltion features. We plot the correlational matrix before and after removing features having absolute correlation greater than 0.9. doing this we get the following correltional maps before and after results. 
+
+<div style="display:flex; gap:20px;"> <iframe src="assets/corr_before.html" width="450" height="450" frameborder="0" ></iframe> <iframe src="assets/corr_after.html" width="450" height="450" frameborder="0" ></iframe> </div>
+
+Looking at the both the figures, we see that multicollinearity decreased after removal. Note: the dark digonal represents self-correlation (always 1) as expected.
+
+The following features were removed due to excessive correlation or limited predictive value:
+- `res.price (cents / kilowatt-hour)`
+- `com.price (cents / kilowatt-hour)`
+- `ind.price (cents / kilowatt-hour)`
+- `res.sales (megawatt-hour)`
+- `com.sales (megawatt-hour)`
+- `ind.sales (megawatt-hour)`
+- `total.sales (megawatt-hour)`
+- `res.customers`
+- `com.customers`
+- `ind.customers`
+- `com.cust.pct (%)`
+- `ind.cust.pct (%)`
+- `com.percen (%)`
+- `ind.percen (%)`
+- `total.customers`
+- `util.realgsp (usd)`
+- `pi.util.ofusa (%)`
+- `pc.realgsp.rel (fraction)`
+- `pct_land (%)`
+
+Now we proceed to tune model's hyperparameters using `GridSearchCv` with cross validation set size of 3 and the following parameter_grid
+`
+param_grid = {
+    "model__n_estimators": [200, 400, 600],
+    "model__max_depth": [20, 40, None],
+    "model__min_samples_split": [2, 5],
+    "model__min_samples_leaf": [1, 2, 4],
+    "model__max_features": ["sqrt", "log2", None]
+}
+`
+
+Best parameters found through this approach were
+`
+Params = {
+    'model__max_depth': 40, 
+    'model__max_features': None, 
+    'model__min_samples_leaf': 2, 
+    'model__min_samples_split': 2, 
+    'model__n_estimators': 400
+}
+`
+With resulting training error of **18.36** and test error of **37.79**. 
 
 ## Fairness Analysis
