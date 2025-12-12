@@ -161,23 +161,19 @@ After running the preprocessing pipeline and training the model, we obtain an **
 ## Final Model
 We chose **RandomForestRegressor** for this problems, intital experiments showed that model overfitted heavily, producing low train error however maintaing high test error. To reduce overfitting we simplify our model by dropping high correltion features. We plot the correlational matrix before and after removing features having absolute correlation greater than 0.9. doing this we get the following correltional maps before and after results. 
 
-<div style="display:flex; gap:20px; justify-content:center; align-items:center;">
-
-  <iframe
+<iframe
     src="assets/corr_before.html"
-    width="500"
-    height="450"
-    style="border:1px solid #ccc; border-radius:6px;"
-  ></iframe>
+    width="800"
+    height="600"
+></iframe>
 
-  <iframe
+<iframe
     src="assets/corr_after.html"
-    width="500"
-    height="450"
-    style="border:1px solid #ccc; border-radius:6px;"
-  ></iframe>
+    width="800"
+    height="600"
+></iframe>
 
-</div>
+
 
 Looking at the both the figures, we see that multicollinearity decreased after removal. Note: the dark digonal represents self-correlation (always 1) as expected.
 
